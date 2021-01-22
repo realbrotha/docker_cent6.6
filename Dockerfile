@@ -18,6 +18,8 @@ rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
 rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 
+RUN yum swap -y fakesystemd systemd && yum install -y systemd-devel
+    
 RUN yum -y install devtoolset-7
 
 RUN scl enable devtoolset-7 bash
