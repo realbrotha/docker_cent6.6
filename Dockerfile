@@ -10,8 +10,7 @@ WORKDIR ${WORK_HOME}
 RUN yum -y install centos-release-scl
 RUN yum update scl-utils
 
-RUN yum swap -y fakesystemd systemd && \
-    yum install -y systemd-devel
+RUN yum swap -y fakesystemd systemd && yum install -y systemd-devel
 
 RUN yum install devtoolset-7
 
